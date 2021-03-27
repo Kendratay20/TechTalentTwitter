@@ -1,5 +1,5 @@
 package com.tts.TechTalentTwitter.model;
 
-public class Model {
+public class User {
 
 }
