@@ -21,6 +21,7 @@ import javax.persistence.JoinColumn;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,9 +37,12 @@ public class User {
 
 	@CreationTimestamp 
 	private Date createdAt;	
-
+	
+	
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), 
 	    inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
+	
+	
 }
